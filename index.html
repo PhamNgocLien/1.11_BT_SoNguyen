@@ -13,16 +13,30 @@
     let count = 0;
     let N = 2;
     while (count < number) {
-        for (let i = 2; i < N; i++) {
-            if (N % i != 0) {
-                i++;
-            } else {
-                N++
+        let i = 2;
+        if (i < N) {
+            while (i < N) {
+                if (N % i != 0) {
+                    while (N % i != 0) {
+                        i++;
+                    }
+                } else {
+                    while (N % i == 0) {
+                        N++;
+                        i = 2;
+                    }
+                }
+            }
+            document.write(N + "<br>");
+            count++;
+            N++;
+        } else {
+            while (i >= N) {
+                document.write(N + "<br>");
+                count++;
+                N++;
             }
         }
-        document.write(N + "<br>");
-        count++;
-        N++;
     }
 </script>
 </body>
